@@ -4,8 +4,10 @@ import 'package:my_bmi/reusable_card.dart';
 
 import 'icon_content.dart';
 
+enum Gender { MALE, FEMALE }
+
 const bottomContainerHeight = 65.0;
-const Color activeCardColor = Color(0xFF1D1E33);
+const Color activeCardColor = Color(0x6F1D1E33);
 const Color inactiveCardColor = Color(0x2F1D1E33);
 
 const Color bottomContainerColor = Colors.indigo;
@@ -17,6 +19,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender selectedGender;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,20 +34,38 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(
-                    colour: inactiveCardColor,
-                    cardWild: IconContent(
-                      iconData: FontAwesomeIcons.mars,
-                      text: 'MALE',
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.MALE;
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: selectedGender == Gender.MALE
+                          ? activeCardColor
+                          : inactiveCardColor,
+                      cardWild: IconContent(
+                        iconData: FontAwesomeIcons.mars,
+                        text: 'MALE',
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    colour: inactiveCardColor,
-                    cardWild: IconContent(
-                      iconData: FontAwesomeIcons.venus,
-                      text: 'FEMALE',
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.FEMALE;
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: selectedGender == Gender.FEMALE
+                          ? activeCardColor
+                          : inactiveCardColor,
+                      cardWild: IconContent(
+                        iconData: FontAwesomeIcons.venus,
+                        text: 'FEMALE',
+                      ),
                     ),
                   ),
                 ),
@@ -72,6 +94,13 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
+            child: Center(
+              child: Text('CALCULATE BMI',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22.0,
+                  )),
+            ),
             color: Colors.indigo,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
