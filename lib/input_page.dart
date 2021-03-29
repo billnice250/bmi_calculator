@@ -5,7 +5,9 @@ import 'package:my_bmi/reusable_card.dart';
 import 'icon_content.dart';
 
 const bottomContainerHeight = 65.0;
-const Color reusableCardColor = Color(0x3F1D1E33);
+const Color activeCardColor = Color(0xFF1D1E33);
+const Color inactiveCardColor = Color(0x2F1D1E33);
+
 const Color bottomContainerColor = Colors.indigo;
 const Color appPrimaryColor = Color(0xFF0D1117);
 
@@ -29,7 +31,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    colour: reusableCardColor,
+                    colour: inactiveCardColor,
                     cardWild: IconContent(
                       iconData: FontAwesomeIcons.mars,
                       text: 'MALE',
@@ -38,7 +40,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: reusableCardColor,
+                    colour: inactiveCardColor,
                     cardWild: IconContent(
                       iconData: FontAwesomeIcons.venus,
                       text: 'FEMALE',
@@ -50,7 +52,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              colour: reusableCardColor,
+              colour: inactiveCardColor,
             ),
           ),
           Expanded(
@@ -58,12 +60,12 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    colour: reusableCardColor,
+                    colour: inactiveCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: reusableCardColor,
+                    colour: inactiveCardColor,
                   ),
                 ),
               ],
