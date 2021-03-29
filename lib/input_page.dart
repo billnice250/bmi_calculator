@@ -98,7 +98,7 @@ class _InputPageState extends State<InputPage> {
               child: Text('CALCULATE',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25.0,
+                    fontSize: 24.0,
                   )),
             ),
             color: bottomContainerColor,
