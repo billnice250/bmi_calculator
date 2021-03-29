@@ -95,13 +95,13 @@ class _InputPageState extends State<InputPage> {
           ),
           Container(
             child: Center(
-              child: Text('CALCULATE BMI',
+              child: Text('CALCULATE',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 22.0,
+                    fontSize: 25.0,
                   )),
             ),
-            color: Colors.indigo,
+            color: bottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
             height: bottomContainerHeight,
