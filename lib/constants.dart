@@ -11,8 +11,13 @@ const kLabelTextStyle = TextStyle(
   color: Color(0xFF8D8E98),
 );
 const kNumberTextStyle = TextStyle(
-  fontSize: 60.0,
+  fontSize: 53.0,
   fontWeight: FontWeight.w900,
+);
+const kTitleSeparationLine = SizedBox(
+  height: 10.0,
 );
 const kMinHumanHeight = 40.0;
 const kMaxHumanHeight = 250.0;
+const kMinHumanWeight = 1;
+const kMaxHumanWeight = 700;

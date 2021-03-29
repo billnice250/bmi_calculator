@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_bmi/reusable_card.dart';
 
 import 'constants.dart';
 import 'icon_content.dart';
+import 'round_icon_button.dart';
 
 enum Gender { MALE, FEMALE }
 
@@ -15,7 +17,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   double height = 160.0;
-  double weight = 60;
+  int weight = 70;
+  int age = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +78,7 @@ class _InputPageState extends State<InputPage> {
                     'HEIGHT',
                     style: kLabelTextStyle,
                   ),
+                  kTitleSeparationLine,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -120,7 +124,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    colour: kInactiveCardColor,
+                    colour: kActiveCardColor,
                     cardWild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -128,17 +132,116 @@ class _InputPageState extends State<InputPage> {
                           'WEIGHT',
                           style: kLabelTextStyle,
                         ),
-                        Text(
-                          weight.toInt().toString(),
-                          style: kNumberTextStyle,
-                        )
+                        kTitleSeparationLine,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              weight.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            Text(
+                              'kg',
+                              style: kLabelTextStyle,
+                            )
+                          ],
+                        ),
+                        kTitleSeparationLine,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPressed: () {
+                                  if (weight > kMinHumanWeight &&
+                                      weight < kMaxHumanHeight) {
+                                    setState(() {
+                                      weight--;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                            Expanded(
+                              child: RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPressed: () {
+                                  if (weight > kMinHumanWeight &&
+                                      weight < kMaxHumanHeight) {
+                                    setState(() {
+                                      weight++;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: kInactiveCardColor,
+                    colour: kActiveCardColor,
+                    cardWild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'AGE',
+                          style: kLabelTextStyle,
+                        ),
+                        kTitleSeparationLine,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              age.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            Text(
+                              'yrs',
+                              style: kLabelTextStyle,
+                            )
+                          ],
+                        ),
+                        kTitleSeparationLine,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPressed: () {
+                                  if (age > 0 && age < 120) {
+                                    setState(() {
+                                      age--;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                            Expanded(
+                              child: RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPressed: () {
+                                  if (age > 0 && age < 120) {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -146,10 +249,10 @@ class _InputPageState extends State<InputPage> {
           ),
           Container(
             child: Center(
-              child: Text('CALCULATE',
+              child: Text('CALCULATE YOUR BMI',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 24.0,
+                    fontSize: 20.0,
                   )),
             ),
             color: kBottomContainerColor,
