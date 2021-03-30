@@ -10,7 +10,7 @@ class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: kBottomContainerColor,
+      systemNavigationBarColor: kCalculateButtonColor,
     ));
     return MaterialApp(
       theme: ThemeData.dark().copyWith(

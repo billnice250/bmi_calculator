@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_bmi/results_page.dart';
 import 'package:my_bmi/reusable_card.dart';
 
+import 'bottom_button.dart';
 import 'constants.dart';
 import 'icon_content.dart';
+import 'results_page.dart';
 import 'round_icon_button.dart';
 
 enum Gender { MALE, FEMALE }
@@ -97,7 +100,7 @@ class _InputPageState extends State<InputPage> {
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
-                      thumbColor: kBottomContainerColor,
+                      thumbColor: kCalculateButtonColor,
                       thumbShape:
                           RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
@@ -247,18 +250,16 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            child: Center(
-              child: Text('CALCULATE YOUR BMI',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  )),
-            ),
-            color: kBottomContainerColor,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
+          BottomButton(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(),
+                ),
+              );
+            },
+            buttonTitle: 'CALCULATE YOUR BMI',
           ),
         ],
       ),
