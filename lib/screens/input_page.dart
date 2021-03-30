@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_bmi/results_page.dart';
-import 'package:my_bmi/reusable_card.dart';
+import 'package:my_bmi/components/bottom_button.dart';
+import 'package:my_bmi/components/icon_content.dart';
+import 'package:my_bmi/components/reusable_card.dart';
+import 'package:my_bmi/components/round_icon_button.dart';
+import 'package:my_bmi/screens/results_page.dart';
 
-import 'bottom_button.dart';
-import 'constants.dart';
-import 'icon_content.dart';
-import 'results_page.dart';
-import 'round_icon_button.dart';
+import '../constants.dart';
 
 enum Gender { MALE, FEMALE }
 
