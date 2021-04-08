@@ -33,12 +33,12 @@ class CalculatorBrain {
       if (_bmi >= 25) {
         return 'You have a higher than normal body weight. Try to exercise more and eat less.';
       } else if (_bmi > 18.5) {
-        return 'Normal';
-      } else {
         return 'You have a normal body weight, Good job!';
+      } else {
+        return 'You have a lower than normal  body weight. You can eat bit more.';
       }
     } else {
-      return 'You have a lower than normal  body weight. You can eat bit more.';
+      return 'Internal error, BMI calculation failed! restart the app and try again';
     }
   }
 }

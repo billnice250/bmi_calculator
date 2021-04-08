@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_bmi/calculator_brain.dart';
 import 'package:my_bmi/components/bottom_button.dart';
 import 'package:my_bmi/components/icon_content.dart';
 import 'package:my_bmi/components/reusable_card.dart';
@@ -20,7 +21,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   double height = 160.0;
   int weight = 70;
-  int age = 10;
+  int age = 18;
 
   @override
   Widget build(BuildContext context) {
@@ -251,10 +252,14 @@ class _InputPageState extends State<InputPage> {
           ),
           BottomButton(
             onTap: () {
+              CalculatorBrain currentResult =
+                  CalculatorBrain(height: height.toInt(), weight: weight);
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ResultsPage(),
+                  builder: (context) => ResultsPage(
+                    result: currentResult,
+                  ),
                 ),
               );
             },
