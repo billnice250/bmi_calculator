@@ -16,7 +16,7 @@ const kLabelTextStyle = TextStyle(
   color: Color(0xFF8D8E98),
 );
 const kNumberTextStyle = TextStyle(
-  fontSize: 53.0,
+  fontSize: 46.0,
   fontWeight: FontWeight.w900,
 );
 const kTitleSeparationLine = SizedBox(
@@ -36,7 +36,7 @@ const kResultTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 const kBMITextStyle = TextStyle(
-  fontSize: 100.0,
+  fontSize: 90.0,
   fontWeight: FontWeight.bold,
 );
 const kAdviceMessageTextStyle = TextStyle(
