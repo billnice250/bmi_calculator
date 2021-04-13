@@ -2,6 +2,10 @@
 
 A Flutter application for calculating a person's Body Mass Index (BMI).
 
+##finished app
+
+[Finished Android App](https://play.google.com/store/apps/details?id=com.bill.my_bmi)
+
 ## Getting Started
 
 ## concepts learnt with this app
